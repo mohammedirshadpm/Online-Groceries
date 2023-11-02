@@ -61,13 +61,12 @@ class _Screen7State extends State<Screen7> {
                       color: Color(0xff7C7C7C))),
             ),
             SizedBox(
-              width: 50,
+              width: 200,
               height: 50,
               child: Padding(
                 padding: const EdgeInsets.only(left: 24.88),
                 child: TextFormField(
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(focusedBorder: InputBorder.none),
+                  decoration: InputDecoration(focusedBorder: InputBorder.none,hintText: "Enter your email"),
                 ),
               ),
             ),
@@ -79,7 +78,23 @@ class _Screen7State extends State<Screen7> {
                   color: Color(0xffE2E2E2),
                 ),
               ),
-            )
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 24.88),
+              child: Text(
+                  "Password",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: Color(0xff7C7C7C)
+                  )
+              ),
+            ),
+
+
           ],
         ),
       ),
