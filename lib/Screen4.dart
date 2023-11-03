@@ -75,7 +75,7 @@ class _Screen4State extends State<Screen4> {
                         child: TextFormField(
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration(
-                              focusedBorder:InputBorder.none
+                              focusedBorder:InputBorder.none,enabledBorder: InputBorder.none,disabledBorder: InputBorder.none,
                           ),
                         ),
                       ),

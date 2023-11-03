@@ -62,7 +62,7 @@ class _Screen5State extends State<Screen5> {
                 padding: const EdgeInsets.only(left: 26.17),
                 child: TextFormField(
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(focusedBorder: InputBorder.none),
+                  decoration: InputDecoration(focusedBorder: InputBorder.none,enabledBorder: InputBorder.none,disabledBorder: InputBorder.none),
                 ),
               ),
             ),
