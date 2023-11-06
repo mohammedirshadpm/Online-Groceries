@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './Screen9.dart';
 import './bottom navigation.dart';
+
 class Screen8 extends StatefulWidget {
   const Screen8({Key? key}) : super(key: key);
 
@@ -222,8 +223,8 @@ class _Screen8State extends State<Screen8> {
               padding: const EdgeInsets.only(left: 25, right: 24.83),
               child: GestureDetector(
                 onTap: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => BottomNavigation()));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => BottomNavigation()));
                 },
                 child: Container(
                     width: 364,

@@ -3,6 +3,7 @@ import 'package:untitled8/Account.dart';
 import 'package:untitled8/Cart.dart';
 import 'package:untitled8/Expolre.dart';
 import 'package:untitled8/Favourite.dart';
+import './Screen10.dart';
 
 class Screen9 extends StatefulWidget {
   const Screen9({Key? key}) : super(key: key);
@@ -202,78 +203,85 @@ class _Screen9State extends State<Screen9> {
                   //
                   Padding(
                     padding: const EdgeInsets.only(left: 15),
-                    child: Container(
-                      width: 173.3249969482422,
-                      height: 248.50999450683594,
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Color(0xffE2E2E2)),
-                          borderRadius: BorderRadius.circular(18)),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 30,
-                          ),
-                          Center(
-                            child: Image.asset(
-                              "assets/a12.png",
-                              width: 103.43207550048828,
-                              height: 62.55572509765625,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (_) => Screen10()));
+                      },
+                      child: Container(
+                        width: 173.3249969482422,
+                        height: 248.50999450683594,
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Color(0xffE2E2E2)),
+                            borderRadius: BorderRadius.circular(18)),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 30,
                             ),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 15),
-                            child: Text("Red Apple",
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: Color(0xff181725))),
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 15),
-                            child: Text("1kg, Priceg",
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
-                                    color: Color(0xff7C7C7C))),
-                          ),
-                          SizedBox(
-                            height: 36,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 15),
-                            child: Row(
-                              children: [
-                                Text("\$4.99",
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w600,
-                                        color: Color(0xff181725))),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 46),
-                                  child: Container(
-                                    width: 45.66999816894531,
-                                    height: 45.66844940185547,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(17),
-                                        color: Color(0xff53b175)),
-                                    child: Icon(
-                                      Icons.add,
-                                      color: Colors.white,
-                                      size: 30,
+                            Center(
+                              child: Image.asset(
+                                "assets/a12.png",
+                                width: 103.43207550048828,
+                                height: 62.55572509765625,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 15),
+                              child: Text("Red Apple",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w400,
+                                      color: Color(0xff181725))),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 15),
+                              child: Text("1kg, Priceg",
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
+                                      color: Color(0xff7C7C7C))),
+                            ),
+                            SizedBox(
+                              height: 36,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 15),
+                              child: Row(
+                                children: [
+                                  Text("\$4.99",
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w600,
+                                          color: Color(0xff181725))),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 46),
+                                    child: Container(
+                                      width: 45.66999816894531,
+                                      height: 45.66844940185547,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(17),
+                                          color: Color(0xff53b175)),
+                                      child: Icon(
+                                        Icons.add,
+                                        color: Colors.white,
+                                        size: 30,
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -989,9 +997,10 @@ class _Screen9State extends State<Screen9> {
                         ),
                       ),
                     )
-                  ]))),SizedBox(
-                    height: 40,
-                  ),
+                  ]))),
+          SizedBox(
+            height: 40,
+          ),
         ])));
   }
 }
