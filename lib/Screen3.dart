@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import './Screen4.dart';
 
 class Screen3 extends StatefulWidget {
@@ -17,7 +18,7 @@ class _Screen3State extends State<Screen3> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 30),
+            padding:  EdgeInsets.only(left: 30),
             child: Stack(
               children: [
                 Image.asset(
@@ -26,7 +27,7 @@ class _Screen3State extends State<Screen3> {
                   height: 300,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 230, top: 14.5),
+                  padding:  EdgeInsets.only(left: 230.w, top: 14.5.h),
                   child: Image.asset(
                     "assets/a3.png",
                     width: 50,
@@ -37,7 +38,7 @@ class _Screen3State extends State<Screen3> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 24.53),
+            padding:  EdgeInsets.only(left: 24.53),
             child: Text("Get your groceries\nwith nectar",
                 style: TextStyle(
                     fontSize: 26,
@@ -48,7 +49,7 @@ class _Screen3State extends State<Screen3> {
             height: 31,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 24.53),
+            padding:  EdgeInsets.only(left: 24.53),
             child: GestureDetector(
               onTap: () {
                 Navigator.of(context)
@@ -62,7 +63,7 @@ class _Screen3State extends State<Screen3> {
                     height: 23.696962356567383,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 12.02),
+                    padding:  EdgeInsets.only(left: 12.02),
                     child: Text("+880",
                         style: TextStyle(
                             fontSize: 18,
@@ -77,7 +78,7 @@ class _Screen3State extends State<Screen3> {
             height: 10.55,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 24.53, right: 25.3),
+            padding:  EdgeInsets.only(left: 24.53, right: 25.3),
             child: Container(
               width: 364,
               child: Divider(
@@ -89,7 +90,7 @@ class _Screen3State extends State<Screen3> {
             height: 40,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 100),
+            padding:  EdgeInsets.only(left: 100),
             child: Text("Or connect with social media",
                 style: TextStyle(
                     fontSize: 14,
@@ -100,7 +101,7 @@ class _Screen3State extends State<Screen3> {
             height: 37,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 24.53, right: 25.3),
+            padding:  EdgeInsets.only(left: 24.53, right: 25.3),
             child: Container(
               width: 364,
               height: 67,
@@ -110,7 +111,7 @@ class _Screen3State extends State<Screen3> {
               child: Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 35),
+                    padding:  EdgeInsets.only(left: 35),
                     child: Image.asset(
                       "assets/a5.png",
                       width: 25.96815490722656,
