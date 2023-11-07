@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled8/Expolre.dart';
+
 
 class Screen10 extends StatefulWidget {
   const Screen10({super.key});
@@ -353,12 +353,8 @@ class _Screen10State extends State<Screen10> {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 25, right: 25),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => Explore()));
-                },
-                child: Container(
+              child:
+                 Container(
                   width: 364,
                   height: 67,
                   decoration: BoxDecoration(
@@ -372,7 +368,7 @@ class _Screen10State extends State<Screen10> {
                             color: Colors.white)),
                   ),
                 ),
-              ),
+
             ),
             SizedBox(
               height: 30,
