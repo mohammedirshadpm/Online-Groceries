@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import './Screen12.dart';
 
 class Screen11 extends StatefulWidget {
   const Screen11({Key? key}) : super(key: key);
@@ -77,10 +78,16 @@ class _Screen11State extends State<Screen11> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 98),
-                  child: Image.asset(
-                    "assets/b14.png",
-                    width: 20,
-                    height: 20,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (_) => Screen12()));
+                    },
+                    child: Image.asset(
+                      "assets/b14.png",
+                      width: 20,
+                      height: 20,
+                    ),
                   ),
                 )
               ],
