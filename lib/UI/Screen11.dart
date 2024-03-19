@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import './Screen12.dart';
+import 'Screen12.dart';
 
 class Screen11 extends StatefulWidget {
   const Screen11({Key? key}) : super(key: key);

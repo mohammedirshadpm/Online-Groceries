@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import './Screen4.dart';
+import 'Screen4.dart';
 
 class Screen3 extends StatefulWidget {
   const Screen3({super.key});
@@ -62,13 +62,17 @@ class _Screen3State extends State<Screen3> {
                     width: 33.96815490722656,
                     height: 23.696962356567383,
                   ),
-                  Padding(
-                    padding:  EdgeInsets.only(left: 12.02),
-                    child: Text("+880",
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xff030303))),
+                  SizedBox(
+                    width: 300.w,
+                    child: Padding(
+                      padding:  EdgeInsets.all(8.0),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          focusedBorder: InputBorder.none,
+                          hintText: '+880'
+                        ),
+                      ),
+                    ),
                   )
                 ],
               ),

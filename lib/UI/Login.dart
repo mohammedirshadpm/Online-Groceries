@@ -1,14 +1,30 @@
 import 'package:flutter/material.dart';
-import './Screen8.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:loading_indicator/loading_indicator.dart';
+import '../BLOC/Sing_In/sing_in_bloc.dart';
+import '../Repository/ModelClass/SingInModel.dart';
+import 'SingUp.dart';
 
-class Screen7 extends StatefulWidget {
-  const Screen7({Key? key}) : super(key: key);
+class Login extends StatefulWidget {
+  const Login({Key? key}) : super(key: key);
 
   @override
-  State<Screen7> createState() => _Screen7State();
+  State<Login> createState() => _LoginState();
 }
 
-class _Screen7State extends State<Screen7> {
+TextEditingController email = TextEditingController();
+TextEditingController password = TextEditingController();
+
+ late SingInModel data;
+
+class _LoginState extends State<Login> {
+  @override
+  void initState() {
+    // BlocProvider.of<SingInBloc>(context)
+    //     .add(FetchSingInEvent(password: password.text.trimRight(), email: email.text.trimRight()));
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,6 +83,7 @@ class _Screen7State extends State<Screen7> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 24.88),
                 child: TextFormField(
+                  controller: email,
                   decoration: InputDecoration(
                       focusedBorder: InputBorder.none,
                       hintText: "Enter your email",
@@ -144,25 +161,21 @@ class _Screen7State extends State<Screen7> {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 25, right: 24.83),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => Screen8()));
-                },
-                child: Container(
-                    width: 364,
-                    height: 67,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(19),
-                        color: Color(0xff53b175)),
-                    child: Center(
-                      child: Text("Log In",
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white)),
-                    )),
-              ),
+              child: Container(
+                  width: 364,
+                  height: 60,
+                  decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(19),
+                  color: Color(0xff53b175)),
+                  child: Center(
+                  child: Text("Log In",
+                  style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white)),
+                  ))
+
+
             ),
             SizedBox(
               height: 25,
@@ -178,11 +191,17 @@ class _Screen7State extends State<Screen7> {
                           color: Color(0xff181725))),
                   Padding(
                     padding: const EdgeInsets.only(left: 3),
-                    child: Text("Singup",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xff53B175))),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (_) => SingUp()));
+                      },
+                      child: Text("Singup",
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xff53B175))),
+                    ),
                   )
                 ],
               ),

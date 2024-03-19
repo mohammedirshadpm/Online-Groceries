@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import './Screen9.dart';
-import './Expolre.dart';
-import './Cart.dart';
-import './Favourite.dart';
-import './Account.dart';
+import 'Screen9.dart';
+import 'Expolre.dart';
+import 'Cart.dart';
+import 'Favourite.dart';
+import 'Account.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({Key? key}) : super(key: key);

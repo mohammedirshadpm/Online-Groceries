@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import './Screen3.dart';
+import 'Login.dart';
+import 'Screen3.dart';
 
 class Screen2 extends StatefulWidget {
   const Screen2({Key? key}) : super(key: key);
@@ -52,10 +53,10 @@ class _Screen2State extends State<Screen2> {
               GestureDetector(
                 onTap: () {
                   Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => Screen3()));
+                      .push(MaterialPageRoute(builder: (_) => Login()));
                 },
                 child: Padding(
-                  padding: const EdgeInsets.only(right: 8),
+                  padding:  EdgeInsets.only(right: 8.w,top: 120.h),
                   child: Container(
                       width: 353,
                       height: 67,

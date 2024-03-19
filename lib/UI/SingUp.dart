@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import './Screen9.dart';
-import './bottom navigation.dart';
+import 'Screen9.dart';
+import 'bottom navigation.dart';
 
-class Screen8 extends StatefulWidget {
-  const Screen8({Key? key}) : super(key: key);
+class SingUp extends StatefulWidget {
+  const SingUp({Key? key}) : super(key: key);
 
   @override
-  State<Screen8> createState() => _Screen8State();
+  State<SingUp> createState() => _SingUpState();
 }
 
-class _Screen8State extends State<Screen8> {
+class _SingUpState extends State<SingUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
