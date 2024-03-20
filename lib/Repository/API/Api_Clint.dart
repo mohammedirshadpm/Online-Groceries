@@ -4,6 +4,7 @@ import 'dart:developer';
 
 
 import 'package:http/http.dart';
+import 'package:untitled8/main.dart';
 
 import 'Api_Exception.dart';
 
@@ -13,19 +14,18 @@ class ApiClient {
     Map<String, String> headerParams = {};
     Response response;
 
-    String url = path;
+    String url = basepath+path;
     print(url);
 
     final nullableHeaderParams = (headerParams.isEmpty) ? null : headerParams;
+
     print(body);
     switch (method) {
       case "POST":
         response = await post(Uri.parse(url),
             headers: {
-              'Content-Type': 'text/plain',
               'content-type': 'application/json',
-              'X-RapidAPI-Key': 'a999da5dcfmsh163a30213d4bd1cp1eb967jsnb813b2e6fbf1',
-              'X-RapidAPI-Host': 'chatgpt-best-api.p.rapidapi.com'
+
             },
             body: body);
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Screen9.dart';
+import 'BottomHome.dart';
 import 'Expolre.dart';
 import 'Cart.dart';
 import 'Favourite.dart';
@@ -12,7 +12,7 @@ class BottomNavigation extends StatefulWidget {
   State<BottomNavigation> createState() => _BottomNavigationState();
 }
 
-final screens = [Screen9(), Explore(), Cart(), Favourite(), Account()];
+final screens = [BottomHome(), Explore(), Cart(), Favourite(), Account()];
 
 class _BottomNavigationState extends State<BottomNavigation> {
   int _selectedIndex = 0;

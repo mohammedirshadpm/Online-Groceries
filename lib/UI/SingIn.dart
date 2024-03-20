@@ -5,6 +5,7 @@ import 'package:loading_indicator/loading_indicator.dart';
 import '../BLOC/Sing_In/sing_in_bloc.dart';
 import '../Repository/ModelClass/SingInModel.dart';
 import 'SingUp.dart';
+import 'bottom navigation.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -16,15 +17,25 @@ class Login extends StatefulWidget {
 TextEditingController email = TextEditingController();
 TextEditingController password = TextEditingController();
 
- late SingInModel data;
+late SingInModel data;
 
 class _LoginState extends State<Login> {
   @override
   void initState() {
-    // BlocProvider.of<SingInBloc>(context)
-    //     .add(FetchSingInEvent(password: password.text.trimRight(), email: email.text.trimRight()));
+      BlocProvider.of<SingInBloc>(context)
+         .add(FetchSingInEvent(password: password.text.trimRight(), email: email.text.trimRight()));
     super.initState();
-  }
+   }
+  // var _formKey = GlobalKey<FormState>();
+  //
+  // void _submit() {
+  //   final isValid = _formKey.currentState!.validate();
+  //   if (isValid == true) {
+  //     BlocProvider.of<SingInBloc>(context)
+  //         .add(FetchSingInEvent(email: email.text.trimRight(),password: password.text));
+  //   }
+  //   _formKey.currentState!.save();
+  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -161,22 +172,67 @@ class _LoginState extends State<Login> {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 25, right: 24.83),
-              child: Container(
+              child: BlocListener<SingInBloc, SingInState>(
+                listener: (context, state) {
+                  if (state is SingInblocLoading) {
+                    showDialog(
+                      barrierDismissible: false,
+                      context: context,
+                      builder: (context) {
+                        return Container(
+                          width: 60.w,
+                          height: 60.h,
+                          child: Center(
+                            child: SizedBox(
+                              width: 60.w,
+                              height: 60.h,
+                              child: LoadingIndicator(
+                                indicatorType:
+                                Indicator.ballSpinFadeLoader,
+                                colors: [Colors.white],
+                                strokeWidth: 1.w,
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                  }
+                  if (state is SingInblocError) {
+                    Navigator.of(context).pop();
+                    Text('error');
+                  }
+                  if (state is SingInblocLoaded) {
+                    data = BlocProvider
+                        .of<SingInBloc>(context)
+                        .singInModel;
+                    Navigator.of(context).pop();
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (_) => BottomNavigation()));
+                  }
+                },
+                child: GestureDetector(
+                  onTap: () {
+                    BlocProvider.of<SingInBloc>(context).add(
+                        FetchSingInEvent(
+                            email: email.text,password: password.text));
+                  },
+                child: Container(
                   width: 364,
                   height: 60,
                   decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(19),
-                  color: Color(0xff53b175)),
+                      borderRadius: BorderRadius.circular(19),
+                      color: Color(0xff53b175)),
                   child: Center(
-                  child: Text("Log In",
-                  style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white)),
-                  ))
-
-
-            ),
+                    child: Text("Log In",
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white)),
+                  ),
+                ),
+              ),
+              )),
             SizedBox(
               height: 25,
             ),
@@ -209,7 +265,7 @@ class _LoginState extends State<Login> {
             SizedBox(
               height: 50,
             ),
-          ],
+            ],
         ),
       ),
     );

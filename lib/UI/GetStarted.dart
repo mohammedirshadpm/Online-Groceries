@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'Login.dart';
+import 'SingIn.dart';
 import 'Screen3.dart';
 
 class Screen2 extends StatefulWidget {

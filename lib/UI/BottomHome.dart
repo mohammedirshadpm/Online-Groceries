@@ -5,14 +5,14 @@ import 'package:untitled8/UI/Expolre.dart';
 import 'package:untitled8/UI/Favourite.dart';
 import 'Screen10.dart';
 
-class Screen9 extends StatefulWidget {
-  const Screen9({Key? key}) : super(key: key);
+class BottomHome extends StatefulWidget {
+  const BottomHome({Key? key}) : super(key: key);
 
   @override
-  State<Screen9> createState() => _Screen9State();
+  State<BottomHome> createState() => _BottomHomeState();
 }
 
-class _Screen9State extends State<Screen9> {
+class _BottomHomeState extends State<BottomHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
