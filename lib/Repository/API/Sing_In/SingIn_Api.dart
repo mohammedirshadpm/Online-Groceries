@@ -16,7 +16,7 @@ class SingInApi {
       "password": password,
     };
     print(body);
-    Response response = await apiClient.invokeAPI(trendingpath, 'POST', body);
+    Response response = await apiClient.invokeAPI(trendingpath, 'POST', jsonEncode(body));
 
     return SingInModel.fromJson(jsonDecode(response.body));
   }

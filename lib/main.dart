@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'BLOC/GetAllProducts/get_all_products_bloc.dart';
 import 'BLOC/SingUp/sing_up_bloc.dart';
 import 'BLOC/Sing_In/sing_in_bloc.dart';
 import 'UI/HomeScreen.dart';
@@ -23,6 +24,9 @@ class MyApp extends StatelessWidget {
         builder: (_, child) {
           return MultiBlocProvider(
               providers: [
+                BlocProvider(
+                  create: (context) => GetAllProductsBloc(),
+                ),
                 BlocProvider(
                   create: (context) => SingUpBloc(),
                 ),

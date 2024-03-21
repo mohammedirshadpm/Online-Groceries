@@ -38,7 +38,8 @@ dependencies:
   http:
   flutter_bloc:
   loading_indicator: ^3.1.1
-
+  carousel_slider:
+  smooth_page_indicator:
 dev_dependencies:
   flutter_test:
     sdk: flutter

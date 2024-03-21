@@ -24,7 +24,6 @@ class ApiClient {
       case "POST":
         response = await post(Uri.parse(url),
             headers: {
-              'content-type': 'application/json',
 
             },
             body: body);
